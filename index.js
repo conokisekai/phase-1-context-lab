@@ -14,6 +14,13 @@ function createEmployeeRecord(arr) {
 function createEmployeeRecords(arrays) {
     return arrays.map(createEmployeeRecord);
   }
+
+  // Helper function to create timeIn event
+function createTimeInEvent(dateStamp) {
+    const [date, hour] = dateStamp.split(' ');
+    this.timeInEvents.push({ type: 'TimeIn', date: date, hour: parseInt(hour, 10) });
+    return this;
+  }
   
 const allWagesFor = function () {
     const eligibleDates = this.timeInEvents.map(function (e) {
