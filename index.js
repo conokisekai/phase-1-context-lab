@@ -41,6 +41,11 @@ function wagesEarnedOnDate(date) {
     const hoursWorked = hoursWorkedOnDate.call(this, date);
     return hoursWorked * this.payPerHour;
   }
+
+  // Helper function to find an employee by first name in an array of employee records
+function findEmployeeByFirstName(srcArray, firstName) {
+    return srcArray.find(record => record.firstName === firstName);
+  }
   
 const allWagesFor = function () {
     const eligibleDates = this.timeInEvents.map(function (e) {
