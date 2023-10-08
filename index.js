@@ -35,6 +35,12 @@ function hoursWorkedOnDate(date) {
     const timeOut = this.timeOutEvents.find(event => event.date === date).hour;
     return (timeOut - timeIn) / 100;
   }
+
+  // Helper function to calculate pay earned on a specific date
+function wagesEarnedOnDate(date) {
+    const hoursWorked = hoursWorkedOnDate.call(this, date);
+    return hoursWorked * this.payPerHour;
+  }
   
 const allWagesFor = function () {
     const eligibleDates = this.timeInEvents.map(function (e) {
