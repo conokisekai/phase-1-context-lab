@@ -21,6 +21,13 @@ function createTimeInEvent(dateStamp) {
     this.timeInEvents.push({ type: 'TimeIn', date: date, hour: parseInt(hour, 10) });
     return this;
   }
+
+  // Helper function to create timeOut event
+function createTimeOutEvent(dateStamp) {
+    const [date, hour] = dateStamp.split(' ');
+    this.timeOutEvents.push({ type: 'TimeOut', date: date, hour: parseInt(hour, 10) });
+    return this;
+  }
   
 const allWagesFor = function () {
     const eligibleDates = this.timeInEvents.map(function (e) {
