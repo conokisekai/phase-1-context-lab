@@ -28,6 +28,13 @@ function createTimeOutEvent(dateStamp) {
     this.timeOutEvents.push({ type: 'TimeOut', date: date, hour: parseInt(hour, 10) });
     return this;
   }
+
+  // Helper function to calculate hours worked on a specific date
+function hoursWorkedOnDate(date) {
+    const timeIn = this.timeInEvents.find(event => event.date === date).hour;
+    const timeOut = this.timeOutEvents.find(event => event.date === date).hour;
+    return (timeOut - timeIn) / 100;
+  }
   
 const allWagesFor = function () {
     const eligibleDates = this.timeInEvents.map(function (e) {
