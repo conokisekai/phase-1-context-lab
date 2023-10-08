@@ -10,6 +10,11 @@ function createEmployeeRecord(arr) {
     };
   }
 
+  // Helper function to create employee records from an array of arrays
+function createEmployeeRecords(arrays) {
+    return arrays.map(createEmployeeRecord);
+  }
+  
 const allWagesFor = function () {
     const eligibleDates = this.timeInEvents.map(function (e) {
         return e.date
