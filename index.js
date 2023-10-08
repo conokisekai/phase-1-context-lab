@@ -46,6 +46,11 @@ function wagesEarnedOnDate(date) {
 function findEmployeeByFirstName(srcArray, firstName) {
     return srcArray.find(record => record.firstName === firstName);
   }
+
+  // Helper function to calculate total pay for all employees for all dates worked
+function calculatePayroll(employeeRecords) {
+    return employeeRecords.reduce((total, record) => total + allWagesFor.call(record), 0);
+  }
   
 const allWagesFor = function () {
     const eligibleDates = this.timeInEvents.map(function (e) {
